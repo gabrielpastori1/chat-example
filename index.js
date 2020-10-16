@@ -8,7 +8,7 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
-app.use('/src',express.static('public'));
+app.use('/src',express.static(__dirname+'/public'));
 
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
